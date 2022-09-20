@@ -2,17 +2,27 @@
   <div class="container">
     <div class="row justify-content-center mt-5">
       <ul class="row list-unstyled">
+        <form action="/solution/createSolution" method="POST">
         <% for(var i=0; i<25; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
+          <li class="col-4 justify-content-between mt-4" id="problem">
             <% let ranNumOne = Math.floor(Math.random()*10) %>
             <% let ranNumTwo= Math.floor(Math.random()*10)%>
-            <%= ranNumOne %>
+           <span name="numOne"><%= ranNumOne %></span>
             +
-            <%= ranNumTwo%>
+            <span name="numTwo"><%= ranNumTwo%></span>
             =
-            <input type="text">
+            <span name="ans"><% ranNumOne + ranNumTwo %></span>
+            
+            
+            <div class="mb-3">
+            <input class=" col-5" class="form-control" id="solution" type="text" name="solution">
+          </div>
         <% } %>
+        
         </ul>
+        <button type="submit" class="btn btn-danger btn-sm">Submit Answer</button>
+      </form>
     </div>
   </div>  
+
 <%- include('partials/footer') -%>
