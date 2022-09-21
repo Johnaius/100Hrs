@@ -1,21 +1,22 @@
 <%- include('partials/header') -%>
   <div class="container">
-    <div class="row justify-content-center mt-5">
+    <div class="row justify-content-center mt-4">
       <ul class="row list-unstyled">
-        <form action="/solution/createSolution" method="POST">
+        <form action="/solution/createSolution/<%= user %>" method="POST">
         <% for(var i=0; i<25; i++) {%>
-          <li class="col-4 justify-content-between mt-4" id="problem">
+          <li class="col-3 justify-content-between mt-4 mr-3" id="problem">
             <% let ranNumOne = Math.floor(Math.random()*10) %>
             <% let ranNumTwo= Math.floor(Math.random()*10)%>
            <span name="numOne"><%= ranNumOne %></span>
             +
             <span name="numTwo"><%= ranNumTwo%></span>
             =
-            <span name="ans"><% ranNumOne + ranNumTwo %></span>
+            <span name="ans"><% let ans= ranNumOne + ranNumTwo %></span>
+           
             
             
-            <div class="mb-3">
-            <input class=" col-5" class="form-control" id="solution" type="text" name="solution">
+            <div class="mb-3 mr-0">
+            <input class=" col-1" class="form-control" id="solution" type="text" name="solution">
           </div>
         <% } %>
         

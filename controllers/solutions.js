@@ -7,9 +7,8 @@ module.exports = {
     try {
     await Solution.create({
         solution: req.body.solution,
-        numOne: req.body.numOne,
-        numTwo:req.body.numTwo,
-        user: req.user.id
+        ans: req.body.ans,
+        user: req.user.id,
       });
       console.log("solution has been added!");
       res.redirect("/profile");

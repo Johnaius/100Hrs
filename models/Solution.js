@@ -5,12 +5,8 @@ const SolutionSchema = new mongoose.Schema({
     type: Array,
     required: true,
   },
-  numOne: {
-    type: Number,
-    required: true,
-  },
-  numTwo: {
-    type: Number,
+  ans: {
+    type: Array,
     required: true,
   },
   user: {
